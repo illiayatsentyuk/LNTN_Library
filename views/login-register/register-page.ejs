@@ -1,0 +1,21 @@
+<%- include("../includes/head") %>
+
+</head>
+<body>
+    <div class="login-form">
+        <h2 class="login-form-title">Register</h2>
+        <form class="login-form-form" action="/register" method="POST">
+            <label for="loginformname">Username</label>
+            <input type="text" name="loginformname" id="loginformname" placeholder="USERNAME">
+            <label for="loginformpassword">Password</label>
+            <input type="password" name="loginformpassword" id="loginformpassword" placeholder="PASSWORD">
+            <label for="loginformpassword">Age</label>
+            <input type="age" name="loginformage" id="loginformage" placeholder="AGE">
+            <button class="login-form-button" type="submit">Log in</button>
+        </form>
+            <a href="/login" class="login-form-forgotpassword">Register</a>
+        </div>
+
+    </div>
+</body>
+</html>
