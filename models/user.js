@@ -26,9 +26,9 @@ module.exports = class User {
 
   save() {
     this.id = Math.random().toString();
-    getUsersFromFile((user) => {
-      user.push(this);
-      fs.writeFile(p, JSON.stringify(user), (err) => {
+    getUsersFromFile((users) => {
+      users.push(this);
+      fs.writeFile(p, JSON.stringify(users), (err) => {
         console.log(err);
       });
     });
@@ -38,10 +38,22 @@ module.exports = class User {
     getUsersFromFile(cb);
   }
 
-  static findById(id, cb) {
+  static findUser(name, password, cb) {
     getUsersFromFile((users) => {
-      const user = users.find((p) => p.id == id);
-      cb(user);
+      if (users.length >= 1) {
+        const user = users.find((p) => p.name == name);
+        if (user) {
+          if (password == user.password) {
+            cb(user);
+          } else {
+            cb({ message: "Password mismatch" });
+          }
+        } else {
+          cb({ message: "No such user" });
+        }
+      }else{
+        cb({ message: "No users" });
+      }
     });
   }
 };

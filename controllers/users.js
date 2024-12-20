@@ -21,3 +21,11 @@ exports.createUser = (req, res, next) => {
   user.save();
   res.redirect("/login");
 };
+
+exports.findUser = (req, res, next) => {
+  const username = req.body.loginformname;
+  const password = req.body.loginformpassword;
+  User.findUser(username, password, user => {
+    res.send(user);
+  });
+};
