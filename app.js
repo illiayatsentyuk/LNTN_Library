@@ -14,6 +14,11 @@ app.set("views", "views");
 
 app.use(libraryRoute);
 
+app.get("/", (req, res) => {
+    res.render("search-books/search-books", {
+        pageTitle: "Search Book",
+    });
+});
 // mongoDb
 
 app.listen(3001);

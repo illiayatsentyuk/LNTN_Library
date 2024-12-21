@@ -1,0 +1,50 @@
+li {
+    list-style-type: none;
+}
+
+.header-search-div {
+    margin: 0 auto;
+    position: absolute;
+}
+
+.header-div {
+    display: flex;
+    justify-content: center;
+}
+
+.input {}
+
+.btn {
+    font-size: 16px;
+    background-color: cornflowerblue;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn:focus {
+    background-color: antiquewhite;
+}
+
+btn:hover {
+    background-color: antiquewhite;
+}
+
+.section-catalog {}
+
+.container {}
+
+.list-books {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.list-item {}
+
+.div-in-item {}
+
+.img-book {}
+
+.name-book {}
+
+.description-book {}
