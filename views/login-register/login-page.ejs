@@ -4,11 +4,13 @@
     <div class="login-form">
         <h2 class="login-form-title">Log in</h2>
         <form class="login-form-form" action="/login" method="POST">
-            <label for="loginformname"></label>
-            <input type="text" name="loginformname" id="loginformname" placeholder="USERNAME">
-            <label for="loginformpassword"></label>
-            <input type="password" name="loginformpassword" id="loginformpassword" placeholder="PASSWORD">
-            <button class="login-form-button" type="submit">Log in</button>
+            <label for="loginformname">Username</label>
+            <input <% if(errors.name) { %> style="border:1px solid red" <% } %> type="text" name="loginformname" id="loginformname" placeholder="USERNAME">
+            <% if(errors.name) { %> <p style="color:red;"><%= errors.name.errorType %></p> <% } %>
+            <label for="loginformpassword">Password</label>
+            <input <% if(errors.password) { %> style="border:1px solid red" <% } %> type="password" name="loginformpassword" id="loginformpassword" placeholder="PASSWORD">
+            <% if(errors.password) { %> <p style="color:red;"><%= errors.password.errorType %></p> <% } %>
+            <button id="btn" class="login-form-button" type="submit">Login</button>
         </form>
         <div class="login-form-subform">
             <div class="login-form-remember-button">
@@ -21,3 +23,6 @@
     </div>
 </body>
 </html>
+<script>
+
+</script>

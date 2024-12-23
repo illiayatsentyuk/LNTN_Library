@@ -1,10 +1,10 @@
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 
 const p = path.join(
   path.dirname(process.mainModule.filename),
-  "data",
-  "users.json"
+  'data',
+  'users.json'
 );
 
 const getUsersFromFile = (cb) => {
@@ -46,13 +46,27 @@ module.exports = class User {
           if (password == user.password) {
             cb(user);
           } else {
-            cb({ message: "Password mismatch" });
+            cb({ message: 'password' });
           }
         } else {
-          cb({ message: "No such user" });
+          cb({ message: 'no-user' });
         }
-      }else{
-        cb({ message: "No users" });
+      } else {
+        cb({ message: 'no-users' });
+      }
+    });
+  }
+  static findUserByName(name, cb) {
+    getUsersFromFile((users) => {
+      if (users.length >= 1) {
+        const user = users.find((p) => p.name == name);
+        if (user) {
+          cb(true);
+        } else {
+          cb(false);
+        }
+      } else {
+        cb(false);
       }
     });
   }

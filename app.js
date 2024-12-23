@@ -17,4 +17,4 @@ app.use(libraryRoute);
 // mongoDb
 
 app.listen(3001);
-console.log("trttr");
+console.log("server is up");
