@@ -1,5 +1,5 @@
 <%- include("../includes/head") %>
-
+<link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
     <div class="login-form">
@@ -11,9 +11,9 @@
             <label for="loginformpassword">Password</label>
             <input <% if(errors.password) { %> style="border:1px solid red" <% } %> type="password" name="loginformpassword" id="loginformpassword" placeholder="PASSWORD">
             <% if(errors.password) { %> <p style="color:red;"><%= errors.password.errorType %></p> <% } %>
-            <label for="loginformpassword">Age</label>
-            <input <% if(errors.age) { %> style="border:1px solid red" <% } %> type="number" name="loginformage" id="loginformage" placeholder="AGE" step="1">
-            <% if(errors.age) { %> <p style="color:red;"><%= errors.age.errorType %></p> <% } %>
+            <label for="loginformemail">Email</label>
+            <input <% if(errors.email) { %> style="border:1px solid red" <% } %> type="text" name="loginformemail" id="loginformemail" placeholder="email">
+            <% if(errors.email) { %> <p style="color:red;"><%= errors.email.errorType %></p> <% } %>
             <button class="login-form-button" type="submit" >Register</button>
         </form>
             <a href="/login" class="login-form-forgotpassword">Login</a>
